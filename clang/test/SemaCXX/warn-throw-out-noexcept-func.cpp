@@ -239,9 +239,9 @@ void n_ShouldNotDiag() noexcept {
   } catch (const S &s) {
   }
 }
-void o_ShouldDiag() noexcept { //expected-note {{function declared non-throwing here}}
+void o_ShouldNotDiag() noexcept {
   try {
-    throw; //expected-warning {{has a non-throwing exception specification but}}
+    throw;
   } catch (...) {
   }
 }
